@@ -47,6 +47,14 @@
     <![endif]-->
 
     <!-- Datatables inserts -->
+    <script>
+    	$.ajaxPrefilter( function (options) {
+	      if (options.crossDomain && jQuery.support.cors) {
+	        var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+	        options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+	      }
+	    });
+    </script>
 	<script src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.8/js/dataTables.bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
