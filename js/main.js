@@ -343,8 +343,8 @@
       });
 
       if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        $('#video-wrapper').append('<div id="fallback-bg"></div>');
-        $('#fallback-bg').css('background-image', 'url('+$('#video-wrapper').data('fallback-bg')+')');
+        $('#video-wrapper').append('<video autoplay loop width="1280" height="720" srcdesk="video/video.mp4" srcmob="video/video.mp4"></video>');
+        // $('#fallback-bg').css('background-image', 'url('+$('#video-wrapper').data('fallback-bg')+')');
       }
     }
 
