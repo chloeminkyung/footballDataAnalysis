@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="">
+
+    <!-- Open Graph Data -->
+    <meta property='og:type' content="website" />
+    <meta property='og:url' content="" />
+    <meta property='og:title' content="" />
+    <meta property='og:description' content="" />
+
+    <meta property='og:image' name="image" content="" />
+    <meta property="og:image:width" content="1466" />
+    <meta property="og:image:height" content="768" />
+
+    <link rel="icon" href="../images/logo_light.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../images/logo_light.png" type="image/x-icon" />
+
+    <!-- Disable google translate -->
+    <meta name="google" content="notranslate"/>
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/bundle.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- JS -->
+    <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bundle.js"></script>
+
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Halant:300,400" rel="stylesheet" type="text/css">
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Datatables inserts -->
+	<script src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.8/js/dataTables.bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+  </head>
+
+  <body>
+    <!-- Preloader-->
+    <div id="loader">
+      <div class="centrize">
+        <div class="v-center">
+          <div id="mask">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Preloader-->
+
+    <!-- Navigation Bar-->
+    <header id="topnav">
+      <div class="container">
+        <!-- Logo container-->
+        <div class="logo">
+          <a href="../index.html">
+            <img src="../images/logo_light.png" alt="" class="logo-light">
+            <img src="../images/logo_dark.png" alt="" class="logo-dark">
+          </a>
+        </div>
+        <!-- End Logo container-->
+        <div class="menu-extras">
+          <div class="menu-item">
+            <!-- Mobile menu toggle-->
+            <a class="navbar-toggle">
+              <div class="lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </a>
+            <!-- End mobile menu toggle-->
+          </div>
+        </div>
+        <div id="navigation">
+          <!-- Navigation Menu-->
+          <ul class="navigation-menu">
+            <li class="has-submenu">
+              <a href="#">Premier League</a>
+              <ul class="submenu">    
+                <li>
+                  <a href="../index.html">Home</a>
+                </li>
+                <li>
+                  <a href="results.html">Results</a>
+                </li>
+                <li>
+                  <a href="clubs-home.html">Clubs</a>
+                </li>
+                <li>
+                  <a href="players.html">Players</a>
+                </li>
+                <li>
+                  <a href="referees.html">Refrees</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="donation.html">Donation</a>
+            </li>
+            <li class="last-element">
+              <a href="about.html">About</a>
+            </li>
+          </ul>
+          <!-- End navigation menu -->
+        </div>
+      </div>
+    </header>
+    <!-- End Navigation Bar-->
+
+    <section class="light">
+      <div class="container">
+        <div class="title center">
+          <h5>Premier League 2019/2020</h5>
+          <h3 class="upper">Referee Analysis</h3>
+          <hr>
+        </div>
+        <div class="section-content" style="overflow: auto;">
+        	<p style="float: right">* Click on the table header for sorting</p>
+          <table id="referees" class="table table-striped">
+          	<thead>
+	          	<tr>
+	          		<th class="sorting_asc" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Position: activate to sort column descending" style="width: 76px;">Position</th>
+	          		<th class="sorting" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-label="Games: activate to sort column ascending" style="width: 65px;">Games</th>
+	          		<th class="sorting" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-label="Referee: activate to sort column ascending" style="width: 84px;">Referee</th>
+	          		<th class="text-right sorting" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-label="Yellow: activate to sort column ascending" style="width: 62px;">Yellow</th>
+	          		<th class="text-right sorting" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-label="Red: activate to sort column ascending" style="width: 41px;">Red</th>
+	          		<th class="text-right sorting" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-label="Fouls: activate to sort column ascending" style="width: 53px;">Fouls</th>
+	          		<th class="text-right sorting" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-label="Yellow per Game: activate to sort column ascending" style="width: 148px;">Yellow per Game</th>
+	          		<th class="text-right sorting" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-label="Red per Game: activate to sort column ascending" style="width: 128px;">Red per Game</th>
+	          		<th class="text-right sorting" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-label="Fouls per Game: activate to sort column ascending" style="width: 123px;">Fouls per Game</th>
+	          		<th class="text-right sorting" tabindex="0" aria-controls="sleague" rowspan="1" colspan="1" aria-label="Points is calculated by giving 10 points for each yellow and 25 points for each red during a game.&quot;>Points per Game: activate to sort column ascending" style="width: 129px;"><a data-placement="top" data-html="true" class="tooltip-hover" >Points per Game<span class="tooltiptext" style="font-size: 8px;"><strong>Points</strong> is calculated by giving 10 points for each yellow and 25 points for each red during a game.</span></a></th>
+	          	</tr>
+	        </thead>
+	        <tbody>
+          	<tr>
+			<td class="sorting_1">1</td>
+			<td>22</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=M%20Dean&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Dean M</a>
+			</td>
+			<td class="text-right">100</td>
+			<td class="text-right">4</td>
+			<td class="text-right">471</td>
+			<td class="text-right"> 4.55</td>
+			<td class="text-right"> 0.18</td>
+			<td class="text-right">21.41</td>
+			<td class="text-right">50.00</td>
+			</tr><tr>
+			<td class="sorting_1">2</td>
+			<td>7</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=P%20Bankes&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Bankes P</a>
+			</td>
+			<td class="text-right">32</td>
+			<td class="text-right">1</td>
+			<td class="text-right">161</td>
+			<td class="text-right"> 4.57</td>
+			<td class="text-right"> 0.14</td>
+			<td class="text-right">23.00</td>
+			<td class="text-right">49.29</td>
+			</tr><tr>
+			<td class="sorting_1">3</td>
+			<td>23</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=A%20Taylor&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Taylor A</a>
+			</td>
+			<td class="text-right">98</td>
+			<td class="text-right">4</td>
+			<td class="text-right">476</td>
+			<td class="text-right"> 4.26</td>
+			<td class="text-right"> 0.17</td>
+			<td class="text-right">20.70</td>
+			<td class="text-right">46.96</td>
+			</tr><tr>
+			<td class="sorting_1">4</td>
+			<td>15</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=S%20Attwell&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Attwell S</a>
+			</td>
+			<td class="text-right">65</td>
+			<td class="text-right">2</td>
+			<td class="text-right">305</td>
+			<td class="text-right"> 4.33</td>
+			<td class="text-right"> 0.13</td>
+			<td class="text-right">20.33</td>
+			<td class="text-right">46.67</td>
+			</tr><tr>
+			<td class="sorting_1">5</td>
+			<td>15</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=C%20Pawson&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Pawson C</a>
+			</td>
+			<td class="text-right">61</td>
+			<td class="text-right">2</td>
+			<td class="text-right">387</td>
+			<td class="text-right"> 4.07</td>
+			<td class="text-right"> 0.13</td>
+			<td class="text-right">25.80</td>
+			<td class="text-right">44.00</td>
+			</tr><tr>
+			<td class="sorting_1">6</td>
+			<td>9</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=A%20Madley&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Madley A</a>
+			</td>
+			<td class="text-right">37</td>
+			<td class="text-right">1</td>
+			<td class="text-right">204</td>
+			<td class="text-right"> 4.11</td>
+			<td class="text-right"> 0.11</td>
+			<td class="text-right">22.67</td>
+			<td class="text-right">43.89</td>
+			</tr><tr>
+			<td class="sorting_1">7</td>
+			<td>20</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=J%20Moss&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Moss J</a>
+			</td>
+			<td class="text-right">76</td>
+			<td class="text-right">2</td>
+			<td class="text-right">394</td>
+			<td class="text-right"> 3.80</td>
+			<td class="text-right"> 0.10</td>
+			<td class="text-right">19.70</td>
+			<td class="text-right">40.50</td>
+			</tr><tr>
+			<td class="sorting_1">8</td>
+			<td>1</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=R%20Jones&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Jones R</a>
+			</td>
+			<td class="text-right">4</td>
+			<td class="text-right">0</td>
+			<td class="text-right">17</td>
+			<td class="text-right"> 4.00</td>
+			<td class="text-right"> 0.00</td>
+			<td class="text-right">17.00</td>
+			<td class="text-right">40.00</td>
+			</tr><tr>
+			<td class="sorting_1">9</td>
+			<td>13</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=L%20Mason&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Mason L</a>
+			</td>
+			<td class="text-right">48</td>
+			<td class="text-right">1</td>
+			<td class="text-right">305</td>
+			<td class="text-right"> 3.69</td>
+			<td class="text-right"> 0.08</td>
+			<td class="text-right">23.46</td>
+			<td class="text-right">38.85</td>
+			</tr><tr>
+			<td class="sorting_1">10</td>
+			<td>20</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=K%20Friend&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Friend K</a>
+			</td>
+			<td class="text-right">66</td>
+			<td class="text-right">3</td>
+			<td class="text-right">415</td>
+			<td class="text-right"> 3.30</td>
+			<td class="text-right"> 0.15</td>
+			<td class="text-right">20.75</td>
+			<td class="text-right">36.75</td>
+			</tr><tr>
+			<td class="sorting_1">11</td>
+			<td>14</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=G%20Scott&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Scott G</a>
+			</td>
+			<td class="text-right">41</td>
+			<td class="text-right">4</td>
+			<td class="text-right">253</td>
+			<td class="text-right"> 2.93</td>
+			<td class="text-right"> 0.29</td>
+			<td class="text-right">18.07</td>
+			<td class="text-right">36.43</td>
+			</tr><tr>
+			<td class="sorting_1">12</td>
+			<td>11</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=D%20Coote&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Coote D</a>
+			</td>
+			<td class="text-right">36</td>
+			<td class="text-right">1</td>
+			<td class="text-right">254</td>
+			<td class="text-right"> 3.27</td>
+			<td class="text-right"> 0.09</td>
+			<td class="text-right">23.09</td>
+			<td class="text-right">35.00</td>
+			</tr><tr>
+			<td class="sorting_1">13</td>
+			<td>9</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=S%20Hooper&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Hooper S</a>
+			</td>
+			<td class="text-right">26</td>
+			<td class="text-right">2</td>
+			<td class="text-right">188</td>
+			<td class="text-right"> 2.89</td>
+			<td class="text-right"> 0.22</td>
+			<td class="text-right">20.89</td>
+			<td class="text-right">34.44</td>
+			</tr><tr>
+			<td class="sorting_1">14</td>
+			<td>20</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=C%20Kavanagh&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Kavanagh C</a>
+			</td>
+			<td class="text-right">68</td>
+			<td class="text-right">0</td>
+			<td class="text-right">405</td>
+			<td class="text-right"> 3.40</td>
+			<td class="text-right"> 0.00</td>
+			<td class="text-right">20.25</td>
+			<td class="text-right">34.00</td>
+			</tr><tr>
+			<td class="sorting_1">15</td>
+			<td>20</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=P%20Tierney&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Tierney P</a>
+			</td>
+			<td class="text-right">57</td>
+			<td class="text-right">3</td>
+			<td class="text-right">478</td>
+			<td class="text-right"> 2.85</td>
+			<td class="text-right"> 0.15</td>
+			<td class="text-right">23.90</td>
+			<td class="text-right">32.25</td>
+			</tr><tr>
+			<td class="sorting_1">16</td>
+			<td>25</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=M%20Atkinson&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Atkinson M</a>
+			</td>
+			<td class="text-right">71</td>
+			<td class="text-right">3</td>
+			<td class="text-right">538</td>
+			<td class="text-right"> 2.84</td>
+			<td class="text-right"> 0.12</td>
+			<td class="text-right">21.52</td>
+			<td class="text-right">31.40</td>
+			</tr><tr>
+			<td class="sorting_1">17</td>
+			<td>23</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=M%20Oliver&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Oliver M</a>
+			</td>
+			<td class="text-right">70</td>
+			<td class="text-right">0</td>
+			<td class="text-right">464</td>
+			<td class="text-right"> 3.04</td>
+			<td class="text-right"> 0.00</td>
+			<td class="text-right">20.17</td>
+			<td class="text-right">30.43</td>
+			</tr><tr>
+			<td class="sorting_1">18</td>
+			<td>1</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=D%20England&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> England D</a>
+			</td>
+			<td class="text-right">3</td>
+			<td class="text-right">0</td>
+			<td class="text-right">25</td>
+			<td class="text-right"> 3.00</td>
+			<td class="text-right"> 0.00</td>
+			<td class="text-right">25.00</td>
+			<td class="text-right">30.00</td>
+			</tr><tr>
+			<td class="sorting_1">19</td>
+			<td>1</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=S%20Scott&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Scott S</a>
+			</td>
+			<td class="text-right">3</td>
+			<td class="text-right">0</td>
+			<td class="text-right">16</td>
+			<td class="text-right"> 3.00</td>
+			<td class="text-right"> 0.00</td>
+			<td class="text-right">16.00</td>
+			<td class="text-right">30.00</td>
+			</tr><tr>
+			<td class="sorting_1">20</td>
+			<td>17</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=A%20Marriner&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Marriner A</a>
+			</td>
+			<td class="text-right">44</td>
+			<td class="text-right">2</td>
+			<td class="text-right">294</td>
+			<td class="text-right"> 2.59</td>
+			<td class="text-right"> 0.12</td>
+			<td class="text-right">17.29</td>
+			<td class="text-right">28.82</td>
+			</tr><tr>
+			<td class="sorting_1">21</td>
+			<td>1</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=T%20Robinson&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Robinson T</a>
+			</td>
+			<td class="text-right">2</td>
+			<td class="text-right">0</td>
+			<td class="text-right">27</td>
+			<td class="text-right"> 2.00</td>
+			<td class="text-right"> 0.00</td>
+			<td class="text-right">27.00</td>
+			<td class="text-right">20.00</td>
+			</tr><tr>
+			<td class="sorting_1">22</td>
+			<td>1</td>
+			<td>
+			<a data-toggle="modal" href="http://www.footstats.co.uk/pagecontent/inserts/_refresult.cfm?year=2019&amp;referee=O%20Langford&amp;league=E0&amp;yearlabel=Premier%20%2D%202019%2F2020" data-target="#events-modal" data-placement="left" title="" class="event tooltip-hover" data-original-title="List of Matches"> Langford O</a>
+			</td>
+			<td class="text-right">1</td>
+			<td class="text-right">0</td>
+			<td class="text-right">23</td>
+			<td class="text-right"> 1.00</td>
+			<td class="text-right"> 0.00</td>
+			<td class="text-right">23.00</td>
+			<td class="text-right">10.00</td>
+			</tr></tbody></table>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- Footer-->
+    <footer id="footer">
+      <div class="container">
+        <div class="go-top">
+          <a href="#top">
+            <i class="ti-arrow-up"></i>
+          </a>
+        </div>
+        <div class="footer-wrap">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="copy-text">
+                <p><i class="icon-heart red mr-15"></i>© 2020 Kirsten Pak.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <ul class="list-inline">
+                <li>
+                  <a href="about.html">About</a>
+                </li>
+                <li>
+                  <a class="custom-dbox-popup" href="https://donorbox.org/football-analysis-data">Donate Now</a>
+                </li>
+                <li>
+                  <a href="about.html#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <div class="footer-social">
+                <ul>
+                  <li>
+                    
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- end of row-->
+        </div>
+      </div>
+      <!-- end of container-->
+    </footer>
+    <!-- end of footer-->
+
+	<div id="events-modal" class="modal fade" tabindex="-1" data-width="760" style="display: none;">
+		<div class="modal-dialog modal-lg" style="margin-left: auto; margin-right: auto;">
+			<div class="modal-content">
+			</div>
+		</div>
+	</div>
+
+  </body>
+  
+  <script type="text/javascript">
+		$(document).ready(function() {
+			$('#referees').dataTable(
+				{"order": [[ 0, 'asc' ]],
+				"pageLength": 50,
+				aLengthMenu: [
+				[25, 50, 100, 200, -1],
+				[25, 50, 100, 200, "All"]
+				],
+				"dom": '<"datatable-header"fr><"datatable-scroll"t><"datatable-footer"ip>',
+				'language': {
+		            'search': 'Search: _INPUT_',
+		            'searchPlaceholder': 'Type to filter...',
+		            'paginate': { 'first': 'First', 'last': 'Last', 'next': $('html').attr('dir') == 'rtl' ? '&larr;' : '&rarr;', 'previous': $('html').attr('dir') == 'rtl' ? '&rarr;' : '&larr;' }
+		        
+				}
+			}
+			);
+		} );
+
+	</script>
+	<script type="text/javascript" src="../js/main.js"></script>
+</html>
